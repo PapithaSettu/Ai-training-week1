@@ -1,0 +1,11 @@
+a=10
+b=20
+print(a+b)
+
+
+jupter Notebook is useful for data analysis,visualization,and experimentation.
+It allows us to execute code cell by cell
+python (.py) files are useful for developing applications and automation.
+python files are better for reusable code and production workflows.
+
+
