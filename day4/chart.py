@@ -1,7 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+os.makedirs("report/figures",exist_ok=True)
 
-df=pd.read_csv(r"C:\Users\ADMIN\Documents\project\employees.csv")
+df=pd.read_csv(r"C:\Users\ADMIN\Documents\project\data\employees.csv")
 
 print(df)
 
@@ -19,7 +21,7 @@ plt.ylabel("Average Salary")
 
 plt.bar_label(bars,fmt="%.2f")
 plt.tight_layout()
-plt.savefig("bar_chart.png")
+plt.savefig("report/figures/bar_chart.png")
 plt.close()
 
 #histogram
@@ -81,3 +83,18 @@ for department in df["department"].dropna().unique():
     plt.close()
 
     print("all 4 charted successfully")
+
+    # box plot
+
+    plt.figure(figsize=(8,5))
+    plt.boxplot(df['salary'].dropna())
+
+    plt.title('Salary Distribution -Box plot')
+    plt.xlable('Salary')
+    plt.ylable('Salary Amount')
+
+    plt.tight_layout()
+    plt.savefig("reports/figures/box_plot.png")
+    plt.close()
+    
+
